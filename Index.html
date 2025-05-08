@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Africa Food - Commande</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Africa Food - Prise de Commande</h1>
+  
+  <div id="tables">
+    <h2>Tables</h2>
+    <div class="table" onclick="selectTable(1)">Table 1</div>
+    <div class="table" onclick="selectTable(2)">Table 2</div>
+    <div class="table" onclick="selectTable(3)">Table 3</div>
+  </div>
+
+  <div id="menu-tabs">
+    <button onclick="showMenu('plats')">Plats</button>
+    <button onclick="showMenu('boissons')">Boissons</button>
+  </div>
+
+  <div id="menu">
+    <div id="plats" class="menu-section">
+      <h2>Plats</h2>
+      <div onclick="addToCart('Poulet', 2500)">Poulet - 2500 CFA</div>
+      <div onclick="addToCart('Poisson', 3000)">Poisson - 3000 CFA</div>
+    </div>
+    <div id="boissons" class="menu-section hidden">
+      <h2>Boissons</h2>
+      <div onclick="addToCart('Coca', 500)">Coca - 500 CFA</div>
+      <div onclick="addToCart('Jus', 700)">Jus - 700 CFA</div>
+    </div>
+  </div>
+
+  <div id="cart">
+    <h2>Panier</h2>
+    <ul id="cart-items"></ul>
+    <p>Total: <span id="total">0</span> CFA</p>
+    <button onclick="sendOrder()">Envoyer</button>
+    <button onclick="closeTable()">Fermer la Table</button>
+  </div>
+
+  <!-- Popup commande -->
+  <div id="popup" class="hidden">
+    <div class="popup-content">
+      <h3>Commande à préparer</h3>
+      <ul id="popup-items"></ul>
+      <button onclick="closePopup()">Préparer</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
